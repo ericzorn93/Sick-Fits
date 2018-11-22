@@ -1,6 +1,6 @@
-import Nav from "./Nav";
 import Link from "next/link";
 import styled from "styled-components";
+import Nav from "./Nav";
 
 const Logo = styled.h1`
   font-size: 4rem;
@@ -49,11 +49,11 @@ const Header = () => (
         </Link>
       </Logo>
       <Nav />
-      <div className="sub-bar">
-        <p>Search</p>
-      </div>
-      <div>Cart</div>
     </div>
+    <div className="sub-bar">
+      <p>Search</p>
+    </div>
+    <div>Cart</div>
   </StyledHeader>
 );
 
