@@ -1,5 +1,5 @@
 {
-  "C:\\Users\\Richard\\Desktop\\javascript-apps\\Wes Bos Courses\\Advanced React and GraphQL\\Sick-Fits\\frontend\\noop": [
+  "./noop": [
     {
       "id": "./node_modules/next/dist/client/noop.js",
       "name": "./node_modules/next/dist/client/noop.js",
