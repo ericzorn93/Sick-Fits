@@ -27,8 +27,7 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="3833" />
-    <option name="y" value="803" />
+    <option name="x" value="713" />
     <option name="width" value="1207" />
     <option name="height" value="1047" />
   </component>
@@ -53,7 +52,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../frontend" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.prettier" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -90,14 +89,15 @@
       <updated>1542903384746</updated>
       <workItem from="1542903385910" duration="1033000" />
       <workItem from="1543083780867" duration="13000" />
+      <workItem from="1543190942727" duration="5000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1046000" />
+    <option name="totallyTimeSpent" value="1051000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="3833" y="803" width="1207" height="1047" extended-state="0" />
+    <frame x="713" y="0" width="1207" height="1047" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21471342" />
       <window_info anchor="bottom" id="TODO" order="6" />
