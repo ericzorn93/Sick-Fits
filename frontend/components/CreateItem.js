@@ -33,9 +33,10 @@ export class CreateItem extends Component {
     description: "",
     image: "",
     largeImage: "",
-    price: 1000
+    price: 0
   };
 
+  // Handles Input Change
   handleChange = e => {
     const { name, type, value } = e.target;
     const val = type === "number" ? parseFloat(value) : value;
