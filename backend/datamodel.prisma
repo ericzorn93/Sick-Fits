@@ -15,7 +15,7 @@ type User {
   resetToken: String
   resetTokenExpiry: Float
   permissions: [Permission]
-  cart: [CartItem!]!
+  # cart: [CartItem!]!
 }
 
 type Item {
@@ -25,5 +25,7 @@ type Item {
   image: String
   largeImage: String
   price: Int!
-  user: User!
+  # createdAt: DateTime!
+  # updatedAt: DateTime!
+  # user: User!
 }

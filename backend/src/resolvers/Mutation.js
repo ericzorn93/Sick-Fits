@@ -55,7 +55,7 @@ const Mutations = {
           ...args,
           password,
           resetToken: Date.now() + "wjhwuhrqowpherqwoeir",
-          permissions: { set: ["User"] }
+          permissions: { set: ["USER"] }
         }
       },
       info
