@@ -1,5 +1,5 @@
 # source: https://us1.prisma.sh/eric-zorn-c61b4c/sick-fits/dev
-# timestamp: Sun Dec 02 2018 14:42:55 GMT-0500 (Eastern Standard Time)
+# timestamp: Sun Dec 09 2018 17:44:22 GMT-0500 (Eastern Standard Time)
 
 type AggregateItem {
   count: Int!
