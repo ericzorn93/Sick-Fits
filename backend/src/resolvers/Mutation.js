@@ -16,8 +16,6 @@ const Mutations = {
       info
     );
 
-    console.log(item);
-
     return item;
   },
   updateItem(parent, args, ctx, info) {
@@ -111,7 +109,6 @@ const Mutations = {
       where: { email: args.email },
       data: { resetToken, resetTokenExpiry }
     });
-    console.log(res);
     // 3. Email them that reset token
     // const mailRes = await transport.sendMail({
     //   from: "zornwebdev@gmail.com",
@@ -123,6 +120,7 @@ const Mutations = {
     //     process.env.FRONTEND_URL
     //   }/reset?resetToken=${resetToken}">Click Here to Reset</a>`)
     // });
+    console.log(res);
 
     // 4. Return the message
     return { message: "Thanks!" };
