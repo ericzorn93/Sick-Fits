@@ -2,6 +2,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { randomBytes } = require("crypto");
 const { promisify } = require("util");
+const { transport, makeANiceEmail } = require("../mail");
 
 const Mutations = {
   async createItem(parent, args, ctx, info) {
@@ -15,6 +16,8 @@ const Mutations = {
       },
       info
     );
+
+    console.log(item);
 
     return item;
   },
@@ -87,13 +90,12 @@ const Mutations = {
       httpOnly: true,
       maxAge: 1000 * 60 * 60 * 24 * 365
     });
-
     // 5. Return the user
     return user;
   },
   signout(parent, args, ctx, info) {
     ctx.response.clearCookie("token");
-    return { message: "Goodbye" };
+    return { message: "Goodbye!" };
   },
   async requestReset(parent, args, ctx, info) {
     // 1. Check if this is a real user
@@ -110,17 +112,16 @@ const Mutations = {
       data: { resetToken, resetTokenExpiry }
     });
     // 3. Email them that reset token
-    // const mailRes = await transport.sendMail({
-    //   from: "zornwebdev@gmail.com",
-    //   to: user.email,
-    //   subject: "Your Password Reset Token",
-    //   html: makeANiceEmail(`Your Password Reset Token is here!
-    //   \n\n
-    //   <a href="${
-    //     process.env.FRONTEND_URL
-    //   }/reset?resetToken=${resetToken}">Click Here to Reset</a>`)
-    // });
-    console.log(res);
+    const mailRes = await transport.sendMail({
+      from: "wes@wesbos.com",
+      to: user.email,
+      subject: "Your Password Reset Token",
+      html: makeANiceEmail(`Your Password Reset Token is here!
+      \n\n
+      <a href="${
+        process.env.FRONTEND_URL
+      }/reset?resetToken=${resetToken}">Click Here to Reset</a>`)
+    });
 
     // 4. Return the message
     return { message: "Thanks!" };

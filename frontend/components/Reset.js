@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Mutation } from "react-apollo";
-import PropTypes from "prop-types";
 import gql from "graphql-tag";
+import PropTypes from "prop-types";
 import Form from "./styles/Form";
 import Error from "./ErrorMessage";
-import CURRENT_USER_QUERY from "./User";
+import { CURRENT_USER_QUERY } from "./User";
 
 const RESET_MUTATION = gql`
   mutation RESET_MUTATION(
@@ -24,11 +24,10 @@ const RESET_MUTATION = gql`
   }
 `;
 
-class RESET extends Component {
+class Reset extends Component {
   static propTypes = {
     resetToken: PropTypes.string.isRequired
   };
-
   state = {
     password: "",
     confirmPassword: ""
@@ -43,14 +42,13 @@ class RESET extends Component {
         variables={{
           resetToken: this.props.resetToken,
           password: this.state.password,
-          confirmPassword: this.state.password
+          confirmPassword: this.state.confirmPassword
         }}
         refetchQueries={[{ query: CURRENT_USER_QUERY }]}
       >
         {(reset, { error, loading, called }) => (
           <Form
             method="post"
-            data-test="form"
             onSubmit={async e => {
               e.preventDefault();
               await reset();
@@ -70,8 +68,9 @@ class RESET extends Component {
                   onChange={this.saveToState}
                 />
               </label>
+
               <label htmlFor="confirmPassword">
-                Password
+                Confirm Your Password
                 <input
                   type="password"
                   name="confirmPassword"
@@ -80,7 +79,8 @@ class RESET extends Component {
                   onChange={this.saveToState}
                 />
               </label>
-              <button type="submit">Reset Your Password</button>
+
+              <button type="submit">Reset Your Password!</button>
             </fieldset>
           </Form>
         )}
@@ -89,5 +89,4 @@ class RESET extends Component {
   }
 }
 
-export default RESET;
-export { REQUEST_RESET_MUTATION };
+export default Reset;
